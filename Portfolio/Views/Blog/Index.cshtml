@@ -1,0 +1,46 @@
+﻿@using System.Security.Claims 
+
+@model IEnumerable<Portfolio.Models.Post>
+
+@{
+    ViewData["Title"] = "Blog";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Welcome to my blog!</h1>          
+<br>
+<h4><a asp-area="" asp-controller="Account" asp-action="Login">Login here</a> or 
+    <a asp-area="" asp-controller="Account" asp-action="Register">create an account</a> to post comments.</h4>
+<br>
+@if (User.Identity.IsAuthenticated)
+{
+     
+
+    <ul>
+        @foreach(var listItem in Model)
+        {
+            <li><h4>@Html.DisplayFor(modelItem => listItem.Title)  
+                 @Html.ActionLink("Details", "Details", new { id = listItem.PostId })           
+              |  @Html.ActionLink("Edit", "EditPost", new { id = listItem.PostId })
+              | @Html.ActionLink("Delete", "DeletePost", new { id = listItem.PostId })
+               
+            </h4></li>
+        }
+    </ul>
+    @Html.ActionLink("Create new blog post", "CreatePost")  
+}
+else               
+    {
+
+<ul>
+     @foreach(var listItem in Model)
+    {
+    <li><h4>@Html.DisplayFor(modelItem => listItem.Title)  
+        @Html.ActionLink("Details", "Details", new { id = listItem.PostId })           
+    </h4></li>
+    }
+</ul>
+    }       
+
+
+            

@@ -1,0 +1,19 @@
+﻿
+@model Portfolio.Models.Post
+
+<html>
+  <head>
+      <title>Blog Post - Delete</title>
+  </head>
+  <body>
+    <h2>Are you sure you want to delete this?</h2>
+    <hr />
+    @Html.DisplayNameFor(model => model.Title): @Html.DisplayFor(model => model.Title)
+    @using (Html.BeginForm("Delete", "Blog"))
+    {
+        @Html.HiddenFor(model => model.PostId)
+        <input type="submit" value="Delete" />
+    }
+    @Html.ActionLink("Back to blog", "Index")     
+  </body>
+</html>

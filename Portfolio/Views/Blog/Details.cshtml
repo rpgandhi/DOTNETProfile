@@ -1,0 +1,83 @@
+﻿<!--//using Portfolio.Models.Post  -->  
+@using System.Security.Claims 
+     
+@model Portfolio.ViewModels.AddComment     
+
+@{      
+    ViewData["Title"] = "Blog Posts";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+             
+
+
+        
+@if(User.Identity.IsAuthenticated)
+{
+    @using (Html.BeginForm("AddComment", "Blog"))
+    {
+        <div id="result1">
+        @Html.LabelFor(model => model.Comment.Author)
+        @Html.TextBoxFor(model => model.Comment.Author)       
+        @Html.DisplayFor(model => model.Comment.CommentContent)
+        @Html.TextAreaFor(model => model.Comment.CommentContent)
+        @Html.HiddenFor(model => model.Comment.PostId)
+        </div>
+        <input type="submit" value="Add Comment" id="ajaxElement"/>
+    }
+}
+else
+{
+    <h3>Please <a asp-area="" asp-controller="Account" asp-action="Login">login here</a> to add or delete a comment.</h3>      
+}
+     
+
+@foreach(var comment in Model.Post.Comments)       
+{
+  @using (Html.BeginForm("DeleteComment", "Blog"))     
+  {
+    <h4>@comment.Author says:</h4>   
+    <p>@comment.CommentContent</p>
+    @if(User.Identity.IsAuthenticated)
+    {
+        <form class="delete-comment">
+            <input type="hidden" name="id" value="@comment.CommentId" />
+            <button type="submit">Delete Comment</button>
+        </form>
+    }           
+  }
+}
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#ajaxElement').click(function () {
+      $.ajax({
+        type: 'GET',
+        url: '@Url.Action("AddComment")',
+        success: function (result) {
+          $('#result1').html(result);
+        }
+      });
+    });
+  });
+</script>
+
+
+ 
+<!--<script type="text/javascript">            
+    $(document).ready(function(){
+        $('.delete-comment').submit(function(event){
+            event.preventDefault();
+            var x = $(this).serialize();
+            $.ajax({
+                url: '@Url.Action("DeleteComment")' ,
+                type: 'POST',
+                data: $(this).serialize(),
+                success: function(result) {
+                    $('.confirm-delete-' + result).html("Comment Deleted");
+                    setTimeout(function() {
+                        $('.confirm-delete-' + result).html("");
+                    }, 3000);
+                }
+            })
+        })
+    })
+</script>-->

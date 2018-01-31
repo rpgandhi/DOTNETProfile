@@ -5,6 +5,10 @@ namespace Portfolio.Models
 {
     public class AppDbContext : IdentityDbContext<AppUser>
     {
+        public AppDbContext()
+        {
+        }
+
         public AppDbContext(DbContextOptions options) : base(options)
         {
 

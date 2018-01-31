@@ -1,0 +1,19 @@
+﻿ 
+
+@{
+    ViewData["Title"] = "Blog";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model Portfolio.Models.Comment
+
+<html>
+<head>
+    <title>Comments</title>
+</head>
+<body>
+    <h2>Comments</h2>
+    <hr />
+    @Html.DisplayNameFor(model => model.Author): @Html.DisplayFor(model => model.Author)
+    <p>@Html.ActionLink("Back to blog", "Index")</p>
+</body>
+</html>

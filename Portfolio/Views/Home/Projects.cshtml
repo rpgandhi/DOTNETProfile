@@ -1,0 +1,13 @@
+﻿@model IEnumerable<Portfolio.Models.GithubRepos>
+@using Portfolio.Models
+
+
+<h1>Check out some of my Github Projects!</h1>
+@foreach (var repo in Model)
+{
+    <div class="repo">
+        <h1><a target="_blank" href=@repo.Html_Url> @repo.Name </a></h1>       
+        <h3>@repo.Description</h3>
+    </div>
+     
+} 
