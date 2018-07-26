@@ -1,6 +1,6 @@
 # Portfolio
 
-This is a project created for the Epicodus code challenge for weeks 3 and 4 of .NET. It is a personal portfolio site with a blog section where users who are signed in can post comments to blog posts. Signing in also offers CRUD capabilities for blog posts and the ability to add and delete comments. It also features AJAZ in the Create section and a Projects section displaying my top 3 starred Github repositories by using the Github API.
+This is a project created for the Epicodus code challenge for weeks 3 and 4 of .NET. It is a personal portfolio site with a blog section where users who are signed in can post comments to blog posts. Signing in also offers CRUD capabilities for blog posts and the ability to add and delete comments. It also features AJAX in the Create section and a Projects section displaying my top 3 starred Github repositories by using the Github API.
 
 ## Prerequisites
 
