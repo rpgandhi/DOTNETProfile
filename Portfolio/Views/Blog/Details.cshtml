@@ -61,23 +61,4 @@ else
 </script>
 
 
- 
-<!--<script type="text/javascript">            
-    $(document).ready(function(){
-        $('.delete-comment').submit(function(event){
-            event.preventDefault();
-            var x = $(this).serialize();
-            $.ajax({
-                url: '@Url.Action("DeleteComment")' ,
-                type: 'POST',
-                data: $(this).serialize(),
-                success: function(result) {
-                    $('.confirm-delete-' + result).html("Comment Deleted");
-                    setTimeout(function() {
-                        $('.confirm-delete-' + result).html("");
-                    }, 3000);
-                }
-            })
-        })
-    })
-</script>-->
+     

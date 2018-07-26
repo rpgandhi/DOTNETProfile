@@ -40,6 +40,10 @@ namespace Portfolio.Controllers
             return View(starredProjects);
         }
 
+        public IActionResult Photography()
+        {
+            return View();
+        }
         public IActionResult Error()
         {
             return View();

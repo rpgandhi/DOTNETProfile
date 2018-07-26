@@ -42,7 +42,7 @@ namespace Portfolio.Models
 
             JArray jsonResponse = JsonConvert.DeserializeObject<JArray>(response.Content);
             List<GithubRepos> projectList = JsonConvert.DeserializeObject<List<GithubRepos>>(jsonResponse.ToString());
-            Console.WriteLine(projectList);
+            Console.WriteLine("#################" + projectList);
             List<GithubRepos> top3Repos = projectList.Take(3).ToList();
             return top3Repos;     
         }

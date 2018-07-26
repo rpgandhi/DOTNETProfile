@@ -3,7 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Portfolio</title>
+    <!--<title>@ViewData["Title"] - Portfolio</title>-->
+    <title>@ViewData["Title"] - Rakhee</title>
 
     <environment names="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
@@ -27,7 +28,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Portfolio</a>
+                <!--<a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Portfolio</a>-->
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -35,17 +36,24 @@
                     <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
                     <li><a asp-area="" asp-controller="Blog" asp-action="Index">Blog</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Projects">Projects</a></li>
-                    <li><a asp-area="" asp-controller="Account" asp-action="Index">Account</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Photography">Photography</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                    <li><a asp-area="" asp-controller="Account" asp-action="Index">Account</a></li>
                 </ul>
             </div>
         </div>
     </nav>
     <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; 2018 - Portfolio</p>
+        <div class="content">
+            <div class="content-inside">
+                @RenderBody()
+            </div>
+        </div>
+
+        <footer class="footer">
+            <hr />
+            <!--<p>&copy; 2018 - Portfolio</p>-->
+            <p>&copy; 2018 - Rakhee Gandhi</p>
         </footer>
     </div>
 

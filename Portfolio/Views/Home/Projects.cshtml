@@ -2,12 +2,20 @@
 @using Portfolio.Models
 
 
-<h1>Check out some of my Github Projects!</h1>
+<h2>Check out some of my Github Projects!</h1>
+
+    <div class="row" id="repo">     
+        
 @foreach (var repo in Model)
 {
-    <div class="repo">
-        <h1><a target="_blank" href=@repo.Html_Url> @repo.Name </a></h1>       
-        <h3>@repo.Description</h3>
-    </div>
-     
+  <div class="col-md-4 well" style="border: 20px">                                                      
+               
+        <h3><a target="_blank" href=@repo.Html_Url> @repo.Name</a></h3>              
+    
+ </div>         
 } 
+      
+    </div>   
+
+
+           
